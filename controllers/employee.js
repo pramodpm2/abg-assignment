@@ -6,7 +6,7 @@ exports.addEmployee = (req, res) => {
     if (user) {
       res.status(409).json("employee already exist");
     } else {
-      const user = new Users({ name, email, mobileNumber, department, salary });
+      const user = new Employees({ name, email, mobileNumber, department, salary });
       user.save((err) => {
         if (err) {
           res.status(404).json("error");
